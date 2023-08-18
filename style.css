@@ -12,6 +12,9 @@
   --surface-color-hover: rgba(255, 255, 255, 0.05);
   --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/moon-stars.svg);
+
+  --logo-color: #202024;
+  --logo-color-hover: #202024aa;
 }
 .light {
   --text-color: black;
@@ -22,6 +25,9 @@
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
   --switch-bg-url: url(./assets/sun.svg);
+
+  --logo-color: #202024;
+  --logo-color-hover: #202024f0;
 }
 body {
   /* background: var(--bg-url) no-repeat top center/cover; */
@@ -42,7 +48,7 @@ body * {
 #container .first p {
   padding-top: 24px;
 }
-#container p {
+#container section > p {
   font-weight: 700;
 }
 
@@ -128,6 +134,29 @@ ul li a:hover {
   background: var(--surface-color-hover);
   border: 1.5px solid var(--text-color);
 }
+
+#projects li {
+  position: relative;
+}
+
+#projects .tag {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  transform: translateY(calc(50% - 10px));
+}
+
+#projects .tag img {
+  height: 35px;
+  background: var(--logo-color);
+  padding: 8px;
+  border-radius: 10px;
+}
+
+#projects a:hover .tag img {
+  background: var(--logo-color-hover);
+}
+
 #social-links {
   display: flex;
   justify-content: center;
@@ -162,6 +191,18 @@ footer img {
   width: 16px;
   margin-right: 8px;
 }
+
+@media (max-width: 700px) {
+  p {
+    font-size: 87.5%;
+  }
+  #projects .tag img {
+    height: 25px;
+    padding: 4px;
+    border-radius: 8px;
+  }
+}
+
 @keyframes slide-in {
   from {
     left: 0;
