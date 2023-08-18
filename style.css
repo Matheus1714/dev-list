@@ -5,7 +5,8 @@
 }
 :root {
   --text-color: white;
-  --bg-url: url(./assets/bg-mobile.jpg);
+  /* --bg-url: url(./assets/bg-mobile.jpg); */
+  --bg-url: linear-gradient(to right, #000000, #434343);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.1);
   --surface-color-hover: rgba(255, 255, 255, 0.05);
@@ -14,7 +15,8 @@
 }
 .light {
   --text-color: black;
-  --bg-url: url(./assets/bg-mobile-light.jpg);
+  /* --bg-url: url(./assets/bg-mobile-light.jpg); */
+  --bg-url: linear-gradient(to right, #d3cce3, #e9e4f0);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -22,7 +24,8 @@
   --switch-bg-url: url(./assets/sun.svg);
 }
 body {
-  background: var(--bg-url) no-repeat top center/cover;
+  /* background: var(--bg-url) no-repeat top center/cover; */
+  background: var(--bg-url);
   height: 100vh;
 }
 body * {
@@ -34,7 +37,15 @@ body * {
   max-width: 588px;
   margin: 56px auto 0px;
   padding: 0 24px;
+  text-align: center;
 }
+#container .first p {
+  padding-top: 24px;
+}
+#container p {
+  font-weight: 700;
+}
+
 #profile {
   text-align: center;
   padding: 24px;
@@ -42,6 +53,7 @@ body * {
 #profile img {
   width: 112px;
   margin: auto;
+  border-radius: 50%;
 }
 #profile p {
   font-weight: 500;
@@ -140,13 +152,15 @@ footer {
   font-size: 14px;
 }
 
-@media (min-width: 700px) {
-  :root {
-    --bg-url: url(./assets/bg-desktop.jpg);
-  }
-  .light {
-    --bg-url: url(./assets/bg-desktop-light.jpg);
-  }
+footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer img {
+  width: 16px;
+  margin-right: 8px;
 }
 @keyframes slide-in {
   from {
